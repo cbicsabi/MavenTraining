@@ -8,5 +8,45 @@
     <artifactId>homework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <junitVersion>4.12</junitVersion>
+        <testngVersion>6.8</testngVersion>
+        <surefirePluginVersion>2.19.1</surefirePluginVersion>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junitVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testngVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefirePluginVersion}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefirePluginVersion}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <property1>${value1}</property1>
+                        <property2>${value2}</property2>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

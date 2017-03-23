@@ -1,0 +1,62 @@
+CSS SELECTORS
+•	Open Selectable.html
+•	Find the 5th Element by using the following hints:
+	o	By attribute
+
+		-[name="five"] / five
+		
+		DOM: document.getElementsByName("five")
+	
+	o	By the number of children only in relation with the <li> node 
+
+		-li:nth-child(5)
+		
+		DOM: document.getElementsByTagName("li")[4] / document.body.childNodes[1].children[4]
+	
+	o	Use bullet 2 and add the relation with <ol> parent by tag name
+
+		-ol>li:nth-child(5)
+		
+		DOM: document.getElementsByTagName("ol")[0].getElementsByTagName("li")[4] (?)
+	
+	o	Use bullet 2 and add the relation with <ol> parent by tag id
+ 
+		-[id=selectable]>li:nth-child(5)
+		
+		DOM: document.getElementById("selectable").getElementsByTagName("li")[4]
+	
+•	Click on the 5th Element and identify it as the selected node
+
+	-[class*="ui-selected"] / li.ui-selected
+	
+	DOM: document.getElementsByClassName("ui-selected")
+
+	o	Research how you can treat the spaces within the class name
+
+		-li.ui-state-default.ui-selectee.ui-selected
+		
+		DOM: document.getElementsByClassName("ui-state-default ui-selectee ui-selected")
+
+•	Hold down the CTRL key and click on several other elements. 
+	o	Identify all elements not selecting (not selected?) using :not() 
+
+		- li:not(.ui-selected)
+		
+		DOM: 
+		- document.querySelector("li:not(.ui-selected)")
+		- document.querySelectorAll("li:not(.ui-selected)")
+	
+	
+HTML DOM
+•	Without using the document.querySelector() and using the direct methods, create identification for the four main bullets above
+•	Use the querySelector simple and All for the last bullet:
+
+
+SIMPLE INSPECT
+•	Show all Dom Properties for the 8th element
+
+	- document.body.childNodes[1].childNodes -> Scroll to 15 and expand
+	
+•	Get the Unique Selector
+
+	-#selectable > li.ui-state-default.ui-selectee.ui-selected

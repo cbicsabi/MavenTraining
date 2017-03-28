@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import java.util.ResourceBundle;
 
-public class TestSuperHomeworkTest {
+public class SuperHomeworkTest {
 
     @Test
     public void superHomeworkMethod(){
